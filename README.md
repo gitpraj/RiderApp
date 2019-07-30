@@ -12,6 +12,23 @@ The SQL server is also configured on Azure, using Azure SQL server and db. There
 
 I have also built a docker image out of the app and pushed it to the docker hub.
 
+### Assumptions
+
+* Simple App to showcase my full stack skills.
+* You can only add, update, delete riders but cannot manipulate jobs. Jobs are added through the DB.
+* StartDate for rider is the datetime the rider is added. Cannot update it.
+* Simple validation against names, phonenumbers, emails. The add/udpate button will not be enabled unless there are valid entries on the addRider and updateRider form on the UI.
+* Sufficient Unit tests
+* Just 2 SQL tables - Rider, Job
+
+### Improvements
+
+* UI can be improved big time.
+* Web API documentation using swagger
+* Authentication/Authorization for the the API's
+* Unit test to involve stub/mock interfaces to talk with dummy data instead of actual database.
+* Azure Devops could be integrated with this repo.
+
 ### Prerequisites
 
 There are no prerequisites for this app as everything is hosted on the cloud. 
