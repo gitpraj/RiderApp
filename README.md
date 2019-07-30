@@ -8,7 +8,7 @@ App URL: https://riderappprajith.azurewebsites.net/
 
 The app is hosted on Azure using WebApps.
 
-The SQL server is also configured on Azure, using Azure SQL server and db. There is a script of the tables that were created for this application. 2 tables - Rider and Job
+The SQL server is also configured on Azure, using Azure SQL server and db. There is a script of the tables that were created for this application in the RiderApp folder named RiderAppDB_script. 2 tables - Rider and Job
 
 ### Assumptions
 
