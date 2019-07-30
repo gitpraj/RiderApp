@@ -1,22 +1,23 @@
-# Project Title
+# RiderApp
 
-One Paragraph of project description goes here
+This App was built for a coding challenge. Riders can be created, updated, deleted. There would be jobs associated with them. You can also view all the riders. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+App URL: https://riderappprajith.azurewebsites.net/riders
+The app is hosted on Azure using WebApps.
+
+The SQL server is also configured on Azure, using Azure SQL server and db. There is a script of the tables that were created for this application. 2 tables - Rider and Job
+
+I have also built a docker image out of the app and pushed it to the docker hub.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+There are no prerequisites for this app as everything is hosted on the cloud. 
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+If using the docker image.
 
 Say what the step will be
 
@@ -34,19 +35,14 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+I have created a few unit tests which are found in the folder RiderAppTest. This could be run manually. Tests include the interface testing i.e. test the controllers. 
 
-### Break down into end to end tests
+These tests will talk with the production database, unfortunately. I can create a dummy db and run the tests.
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ### And coding style tests
 
-Explain what these tests test and why
+The functionalities are as modularized as possible.
 
 ```
 Give an example
@@ -54,34 +50,12 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Run the docker image as mentioned previously. 
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* React.js, css, bootstrap - Front End 
+* .NET MVC/Core C# - Back End
+* Hosted on Azure WebApps
+* Azure SQL Server - Database
+* Docker Image
