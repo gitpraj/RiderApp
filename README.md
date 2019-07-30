@@ -10,8 +10,6 @@ The app is hosted on Azure using WebApps.
 
 The SQL server is also configured on Azure, using Azure SQL server and db. There is a script of the tables that were created for this application. 2 tables - Rider and Job
 
-I have also built a docker image out of the app and pushed it to the docker hub.
-
 ### Assumptions
 
 * Simple App to showcase my full stack skills.
