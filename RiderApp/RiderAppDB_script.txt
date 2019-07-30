@@ -1,0 +1,57 @@
+/****** Object:  Table [dbo].[Rider]    Script Date: 7/30/2019 7:28:19 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Rider](
+	[Id] [int] NOT NULL,
+	[FirstName] [varchar](50) NOT NULL,
+	[LastName] [varchar](50) NULL,
+	[PhoneNumber] [varchar](20) NOT NULL,
+	[Email] [varchar](50) NOT NULL,
+	[StartDate] [datetime] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [UC_Email] UNIQUE NONCLUSTERED 
+(
+	[Email] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+
+/****** Object:  Table [dbo].[Job]    Script Date: 7/30/2019 7:27:39 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Job](
+	[Id] [int] NOT NULL,
+	[DateTime] [datetime] NOT NULL,
+	[RiderId] [int] NOT NULL,
+	[ReviewScore] [int] NOT NULL,
+	[ReviewComment] [varchar](200) NULL,
+	[CompletedAt] [datetime] NOT NULL,
+ CONSTRAINT [PK_Job] PRIMARY KEY NONCLUSTERED 
+(
+	[Id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Job]  WITH CHECK ADD  CONSTRAINT [FK_Job_Rider] FOREIGN KEY([RiderId])
+REFERENCES [dbo].[Rider] ([Id])
+GO
+
+ALTER TABLE [dbo].[Job] CHECK CONSTRAINT [FK_Job_Rider]
+GO
+
