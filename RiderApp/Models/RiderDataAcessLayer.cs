@@ -28,7 +28,7 @@ namespace RiderApp.Models
             if (db.Rider.Any())
             {
                 maxid = db.Rider.Max(o => o.Id);
-                return maxid + 1;
+                return maxid;
             }
             else
             {
