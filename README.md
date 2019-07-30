@@ -28,28 +28,12 @@ I have also built a docker image out of the app and pushed it to the docker hub.
 * Authentication/Authorization for the the API's
 * Unit test to involve stub/mock interfaces to talk with dummy data instead of actual database.
 * Azure Devops could be integrated with this repo.
+* Docker container for the app.
 
 ### Prerequisites
 
 There are no prerequisites for this app as everything is hosted on the cloud. 
 
-### Installing
-
-If using the docker image.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -58,17 +42,9 @@ I have created a few unit tests which are found in the folder RiderAppTest. This
 These tests will talk with the production database, unfortunately. I can create a dummy db and run the tests.
 
 
-### And coding style tests
+### Deisgn Style
 
-The functionalities are as modularized as possible.
-
-```
-Give an example
-```
-
-## Deployment
-
-Run the docker image as mentioned previously. 
+3 Tier Architecture - Presentation layer, Business Layer, Data Access Layer
 
 ## Built With
 
