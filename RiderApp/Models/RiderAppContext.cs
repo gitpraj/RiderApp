@@ -35,7 +35,7 @@ namespace RiderApp.Models
                 IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
             .AddJsonFile("appsettings.json")
-            .Build();
+            .Build();  
 
                 string dbstr = configuration.GetConnectionString("DefaultConnection");
                 optionsBuilder.UseSqlServer(dbstr);

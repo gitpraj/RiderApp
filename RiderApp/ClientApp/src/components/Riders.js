@@ -27,8 +27,10 @@ export class Riders extends Component {
             })
     }
 
+    /**
+     * This function is callback from the child component Rider
+     * */
     updateRiders() {
-
         this.componentWillMount();
     }
 

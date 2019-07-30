@@ -18,9 +18,11 @@ export class AddRider extends Component {
         this.handleBackButton = this.handleBackButton.bind(this);
     }
 
+    /**
+     * This function hadles submit on the form and calls API to create new rider.
+     * @param {any} e
+     */
     handleSubmit(e) {
-        console.log(this.state)
-        console.log("submit clicked")
         e.preventDefault();
 
         
@@ -52,13 +54,33 @@ export class AddRider extends Component {
             })
     }
 
+    /**
+     * This function handled the back button. Goes to home page
+     * @param {any} e
+     */
     handleBackButton(e) {
         this.props.history.push("/");
     }
 
+    validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    validatePhone(phone) {
+        var re = /^\(?(?:\+?61|0)([4]{1})[0-9]{8,8}$/;
+        return re.test(phone);
+    }
+    /**
+     * validate() - validation on the form.
+     * @param {any} firstname
+     * @param {any} lastname
+     * @param {any} phonenum
+     * @param {any} email
+     */
     validate(firstname, lastname, phonenum, email) {
         // true means invalid, so our conditions got reversed
-        const isFine = firstname.length > 0 && lastname.length > 0 && phonenum.length > 0 && email.length > 0;
+        const isFine = firstname.length > 0 && lastname.length > 0 && this.validateEmail(email) > 0 && this.validatePhone(phonenum) > 0;
         return isFine;
     }
 

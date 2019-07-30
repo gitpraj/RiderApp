@@ -19,6 +19,24 @@ namespace RiderApp.Models
     public class RiderDataAcessLayer
     {
         RiderAppContext db = new RiderAppContext();
+
+        /* MaxRiderId(): checking if any entry present in rider table and
+         *      then providing the max id */
+        public int MaxRiderId()
+        {
+            int maxid;
+            if (db.Rider.Any())
+            {
+                maxid = db.Rider.Max(o => o.Id);
+                return maxid + 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        /* GetAllRiders(): get all riders from db */
         public IEnumerable<Rider> GetAllRiders()
         {
             try
@@ -31,6 +49,8 @@ namespace RiderApp.Models
             }
         }
 
+        /* GetAllRiderJobs(): get all riders with bestreviewscore, bestreviewcomment and
+         *      avgReviewscore */
         public IEnumerable<RiderJobData> GetAllRiderJobs()
         {
             try
@@ -54,7 +74,7 @@ namespace RiderApp.Models
                 return null;
             }
         }
-        //To Add new employee record     
+        //To Add new Rider record     
         public int AddRider(Rider rider)
         {
             try
@@ -68,7 +88,7 @@ namespace RiderApp.Models
                 return -1;
             }
         }
-        //To Update the records of a particluar employee    
+        //To Update the records of a particluar Rider    
         public int UpdateRider(Rider rider)
         {
             try
@@ -82,7 +102,7 @@ namespace RiderApp.Models
                 return -1;
             }
         }
-        //Get the details of a particular employee    
+        //Get the details of a particular Rider    
         public Rider GetRiderData(int id)
         {
             try
@@ -95,7 +115,8 @@ namespace RiderApp.Models
                 return null;
             }
         }
-        //To Delete the record of a particular employee    
+        /* To Delete the record of a particular Rider. Delete respective rider rows 
+            from Job table and then delete the rider from Rider table */
         public int DeleteRider(int id)
         {
             try
@@ -113,12 +134,5 @@ namespace RiderApp.Models
                 return -1;
             }
         }
-        //To Get the list of Cities    
-        //public List<TblCities> GetCities()
-        //{
-        //    List<TblCities> lstCity = new List<TblCities>();
-        //    lstCity = (from CityList in db.TblCities select CityList).ToList();
-        //    return lstCity;
-        //}
     }
 }

@@ -13,6 +13,10 @@ export class Rider extends Component {
         this.handleDeleteRiderSubmit = this.handleDeleteRiderSubmit.bind(this);
     }
 
+    /**
+     * passing rider info to the update rider component.
+     * @param {any} e
+     */
     handleUpdateRiderSubmit(e) {
         e.preventDefault();
         //this.props.history.push("/updaterider");
@@ -22,6 +26,10 @@ export class Rider extends Component {
         })
     }
 
+    /**
+     * delete rider api called
+     * @param {any} e
+     */
     handleDeleteRiderSubmit(e) {
         e.preventDefault();
         const { riderid } = this.props.riderInfo;

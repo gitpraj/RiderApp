@@ -27,16 +27,24 @@ namespace RiderApp.Controllers
         [Route("api/Rider/Create")]
         public int Create(Rider Rider)
         {
-            IEnumerable<Rider> allRiders = objRider.GetAllRiders();
-            if (allRiders.Count() > 0)
-            {
-                int maxid = allRiders.Max(o => o.Id);
-                Rider.Id = maxid + 1;
-            }
-            else
-            {
-                Rider.Id = 1;
-            }
+            //if (db.Orderss.Any(o => o.Transaction == txnId))
+            //if (objRider.RiderPresent() == 1)
+            //{
+
+            //}
+            //    IEnumerable<Rider> allRiders = objRider.GetAllRiders();
+            //if (allRiders.Count() > 0)
+            //{
+            //    int maxid = allRiders.Max(o => o.Id);
+            //    Rider.Id = maxid + 1;
+            //}
+            //else
+            //{
+            //    Rider.Id = 1;
+            //}
+
+            /* getting the max id from Rider table and setting id for new rider entry */
+            Rider.Id = objRider.MaxRiderId() + 1;
             Rider.StartDate = DateTime.Now;
 
             return objRider.AddRider(Rider);
